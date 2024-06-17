@@ -11,9 +11,10 @@ func yallo(c echo.Context) error {
 }
 func main() {
 	e := echo.New()
-	e.GET("/health-check", handlers.HealtCheckhandler())
-	e.GET("/posts", handlers.HealtCheckhandler())
-	e.GET("/post/:id", handlers.HealtCheckhandler())
+	e.GET("/health-check", handlers.HealthCheckHandler)
+	e.GET("/posts", handlers.PostIndexHandler)
+	e.GET("/post/:id", handlers.PostSingleHandler)
+	e.GET("/posts/popa", yallo)
 
 	e.Start(":8080")
 }

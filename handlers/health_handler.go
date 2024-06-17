@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func HealtCheckhandler(c echo.Context) error {
+func HealthCheckHandler(c echo.Context) error {
 	return c.String(http.StatusOK, "OK!")
 
 }
